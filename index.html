@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Введите два числа для суммирования</h1>
+        <input type="text" id="number1" placeholder="Первое число">
+        <input type="text" id="number2" placeholder="Второе число">
+        <button onclick="calculateSum()">Посчитать сумму</button>
+        <p id="result"></p>
+    </div>
+    <div>
+        <h1>Приветствие пользователя</h1>
+        <button onclick="greetUser()">Поприветствовать</button>
+    </div>
+    <div>
+        <h1>Суммирование двух чисел</h1>
+        <button onclick="addNumbers()">Посчитать сумму</button>
+    </div>
+    <div>
+        <h1>Задание 7</h1>
+        <button onclick="Seven()">Задание 7</button>
+    </div>
+
+    <div>
+        <h1>Сравнение двух чисел</h1>
+        <button onclick="compareNumbers()">Сравнить числа</button>
+    </div>
+
+    <div>
+        <h1>Вывод чисел от меньшего до большего</h1>
+        <button onclick="printNumbers()">Вывести числа</button>
+    </div>
+
+    <div>
+        <h1>Приветствие по времени</h1>
+        <button onclick="greetByHour()">Получить приветствие</button>
+    </div>
+
+    <div>
+        <h1>Вход по возрасту</h1>
+        <button onclick="Age()">Получить приветствие</button>
+    </div>
+    <script>
+        
+        //Задание 1
+        alert("Я JavaScript!");
+        
+        //Задание 2
+        console.log("Hello, World!!!");
+
+
+        //Задание 3
+        function calculateSum() {
+            var num1 = parseFloat(document.getElementById("number1").value);
+            var num2 = parseFloat(document.getElementById("number2").value);
+            
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Пожалуйста, введите корректные числа.");
+                return;
+            }
+
+            
+            var sum = num1 + num2;
+
+            
+            document.getElementById("result").innerText = "Сумма: " + sum;
+        }
+
+
+        //Задание 4
+        function greetUser() {
+            var name = prompt("Введите ваше имя:");
+            let no = ""
+
+            if (name!=no) {
+                
+                var message1 = "Привет, " + name + "!"; 
+                var message2 = "Привет, ".concat(name, "!"); 
+                var message3 = `Привет, ${name}!`;
+                
+                alert(message1); 
+                console.log(message2); 
+                console.log(message3); 
+            } else {
+                alert("Имя не было введено.");
+            }
+        }
+        
+
+        //Задание 5
+        function addNumbers() {
+            var num1 = prompt("Введите первое число:");
+            var num2 = prompt("Введите второе число:");
+
+            var number1 = parseFloat(num1);
+            var number2 = parseFloat(num2);
+
+            if (isNaN(number1) || isNaN(number2)) {
+                alert("Ошибка: Пожалуйста, введите корректные числа.");
+            } else {
+                
+                var sum = number1 + number2;
+                alert("Сумма: " + sum);
+            }
+        }
+
+
+        //Задание 6
+        let aa = Number(prompt("Enter a - "));
+        let bb = Number(prompt("Enter b..."));
+        console.log(aa + bb);
+
+
+        //Задание 7
+        function Seven() {
+            let a = 1, b = 1;
+            let c = ++a;
+            let d = b++;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+        }
+    
+        //Задание 8
+        function compareNumbers() {
+            let aa = Number(prompt("Введите первое число:"));
+            let bb = Number(prompt("Введите второе число:"));
+
+            if (aa > bb) {
+                alert(`${aa} больше чем ${bb}`);
+            } else if (aa === bb) {
+                alert(`${aa} равно ${bb}`);
+            } else {
+                alert(`${aa} меньше чем ${bb}`);
+            }
+        }
+    
+        //Задание 9
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+
+        //Задание 10
+        function printNumbers() {
+            let firstNumber = Number(prompt("Введите первое число:"));
+            let secondNumber = Number(prompt("Введите второе число:"));
+
+            let min = Math.min(firstNumber, secondNumber);
+            let max = Math.max(firstNumber, secondNumber);
+
+            for (let i = min; i <= max; i++) {
+                console.log(i);
+            }
+        }
+    
+        //Задание 11
+        function greetByHour() {
+            let hours = Number(prompt("Введите число (0-24), обозначающее часы:"));
+
+            if (hours < 0 || hours >= 24) {
+                console.log("Неправильное время!!!");
+            } else if (hours < 12) {
+                console.log("Доброе утро!");
+            } else if (hours < 18) {
+                console.log("Добрый день!");
+            } else if (hours < 22) {
+                console.log("Добрый вечер!");
+            } else {
+                console.log("Доброй ночи!");
+            }
+        }
+        
+        //Задание 12
+        function Age() {
+            let age = Number(prompt("Введите ваш возраст:"));
+            
+            if (age < 16 || age > 65) {
+                console.log("Ваш возраст должен быть от 16 до 65");
+            } else if (age > 16 || age < 65) {
+                console.log("Добро пожаловать в систему!")
+            }
+        
+        }
+    </script>
+</body>
+</html>
